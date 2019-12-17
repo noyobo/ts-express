@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "target": "esnext",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "typeRoots": ["src/**/*", "./src/typings/", "./node_modules/@types/"],
+    "plugins": [{ "transform": "typescript-transform-paths" }]
+  },
+  "include": ["src/*", "src/**/*", "src/typings"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
