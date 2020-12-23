@@ -11,7 +11,7 @@ export const sequelize = new Sequelize(dbOption.database, dbOption.username, dbO
     underscored: true,
     timestamps: true,
     charset: 'utf8mb4',
-    collate: 'utf8mb4_unicode_ci',
+    collate: 'utf8mb4_bin',
   },
   timezone: '+8:00',
 });

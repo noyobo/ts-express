@@ -1,7 +1,7 @@
+import { Controller, Get } from '@overnightjs/core';
 import { Request, Response } from 'express';
 
 import { User } from '@/models';
-import { Controller, Get } from '@overnightjs/core';
 
 @Controller('admin')
 export class AdminController {

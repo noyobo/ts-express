@@ -1,10 +1,9 @@
+import { Server } from '@overnightjs/core';
 import cookieParser from 'cookie-parser';
 import express, { Application, NextFunction, Request, Response } from 'express';
 import createError from 'http-errors';
 import logger from 'morgan';
 import path from 'path';
-
-import { Server } from '@overnightjs/core';
 
 import { AdminController } from './controllers/admin';
 
@@ -26,12 +25,12 @@ export class AppServer extends Server {
     this.setupControllers();
 
     // catch 404 and forward to error handler
-    app.use((req: Request, res: Response, next: NextFunction): void => {
+    app.use((req: Request, res: Response, next: NextFunction) => {
       next(createError(404));
     });
 
     // error handler
-    app.use((err: any, req: Request, res: Response): void => {
+    app.use((err: any, req: Request, res: Response, next: NextFunction) => {
       // set locals, only providing error in development
       res.locals.message = err.message;
       res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -42,7 +41,7 @@ export class AppServer extends Server {
     });
   }
 
-  private setupControllers(): void {
+  private setupControllers() {
     const adminController = new AdminController();
 
     super.addControllers([adminController] /*, optional router here*/);
